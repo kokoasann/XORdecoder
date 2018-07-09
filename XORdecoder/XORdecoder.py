@@ -1,5 +1,5 @@
 #coding: utf-8
-#testes
+
 import numpy as np
 
 X = np.array([0x00])
