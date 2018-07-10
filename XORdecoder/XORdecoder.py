@@ -38,8 +38,22 @@ if __name__ == "__main__":
         out = XORE(file)
         if out != 0:
             if X[0] == 0xFF:
+                X[0] = 0
+                if len(X) < 2:
+                    X.append(0x01)
+                else:
+                    X[1] += 1
                 print("fack")
                 break;
+            for i in range(len(X)):
+                if X[i] == 0xFF:
+                    X[i] = 0
+                    if len(X)-1 == i:
+                        X.append(0x01)
+                    else:
+                        X[i+1] += 1
+                elif i == 0:
+                    X[i] += 1
             X[0] += 1
         else:
             print("thank")
